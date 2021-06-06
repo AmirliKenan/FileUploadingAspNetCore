@@ -1,0 +1,36 @@
+﻿@model List<Product>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <a asp-action="Create" asp-controller="Home" >Create New</a>
+    <table  class="table">
+        <tr>
+           
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Picture</th>
+        </tr>
+       @foreach (var item in Model)
+       {
+           <tr>
+            
+               <td>@item.Name</td>
+               <td>@item.Description</td>
+               <td>@item.Price</td>
+               <td><img  src="~/images/@item.PicturePath"/></td>
+             
+           </tr>
+
+       }
+    </table>
+        
+    
+</body>
+</html>
